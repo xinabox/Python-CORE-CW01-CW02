@@ -1,9 +1,17 @@
 from time import sleep_ms
 from machine import I2C, Pin
+import sys
 
 class xCore:
-    def __init__(self, freq=100000, scl=22, sda=21):
-        self.i2c = I2C(scl=Pin(scl), sda=Pin(sda), freq=100000)
+    def __init__(self, freq=100000):
+        if sys.platform == "esp8266":
+            scl=14
+            sda=2
+        else:
+            scl=22
+            sda=21
+     
+        self.i2c = I2C(scl=Pin(scl), sda=Pin(sda), freq=100000)   
 
     def write_read(self, addr, reg, length, repeat=False):
         self.i2c.writeto(addr, bytearray([reg]), repeat)
@@ -22,3 +30,4 @@ class xCore:
 
     def sleep(time):
         sleep_ms(time)
+
