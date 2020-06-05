@@ -16,7 +16,7 @@ Use *VSC* (find it here https://code.visualstudio.com)
 - You need a plugin, such as [Pymakr](https://docs.pycom.io/pymakr/installation/vscode/)
 
 ### ESPlorer ###
-Use *ESPlorer* (find it here https://esp8266.ru/esplorer/)
+Use *ESPlorer* [ESPlorer](https://github.com/xinabox/ESPlorer/releases/latest)
 - This IDE allows you to switch DTR/RTS off - see note regarding CW01 below
 
 ### Note using CW01 ###
